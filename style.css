@@ -1,0 +1,149 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+}
+
+/* ----------SASS extended properties-------*/
+.operation-items, header {
+  display: flex;
+  justify-content: center;
+}
+
+.operation, .information-wrapper, header {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ----------Header-------*/
+header {
+  padding: 1em 2em;
+}
+header img {
+  max-width: 200px;
+}
+
+/* ---------- Localisation ---------- */
+.localisation-and-presentation {
+  max-width: 100%;
+}
+
+.localisation {
+  max-width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 0.5em;
+  background-color: #f2f2f2;
+  box-shadow: inset 0px 11px 8px -10px #ccc;
+}
+.localisation i {
+  margin-right: 0.25em;
+}
+
+form input {
+  padding: 0.5em 1em;
+  border: none;
+  outline: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background-color: #fff;
+  background-color: inherit;
+  max-width: 200px;
+}
+form input::placeholder {
+  font-weight: 400;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #f2f2f2 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #f2f2f2 inset !important;
+}
+
+/* ---------- Information ---------- */
+.info {
+  text-align: center;
+  padding: 60px 40px;
+  background-color: #fafafa;
+}
+.info h2 {
+  font-size: 1.5rem;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 0;
+}
+.info p {
+  margin-bottom: 30px;
+}
+.info a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(180deg, #ff79da, #9356dc);
+  padding: 1em 1.5em;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* ---------- Operation ---------- */
+.operation-wrapper {
+  padding: 20px;
+}
+
+.operation-items {
+  align-items: center;
+  flex-direction: column;
+}
+
+.operation-item {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5px 30px;
+  background-color: #fafafa;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 1.5em;
+}
+.operation-item i {
+  color: #a6a6a6;
+  margin-right: 30px;
+}
+.operation-item .icon-purple-color {
+  color: #9356dc;
+}
+.operation-item.background-purple-color {
+  background-color: #f2eafb;
+}
+.operation-item p {
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  background-color: #9356dc;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+/*# sourceMappingURL=style.css.map */
