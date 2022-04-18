@@ -21,6 +21,14 @@
   </head>
 
   <body>
+    <!-- spinner -->
+    <div class="spinner-body">
+      <div class="spinner container">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
     <header class="container">
       <a href="#"><img src="images/ohmyfood.png" alt="logo" /></a>
     </header>
@@ -46,7 +54,7 @@
               Découvrez des restaurrants d'exception, sélectionnés par nos
               soins.
             </p>
-            <a href="#">Explorer nos restaurants</a>
+            <a href="#restaurant-cards">Explorer nos restaurants</a>
           </div>
         </div>
       </section>
@@ -76,7 +84,7 @@
         </div>
       </section>
 
-      <section class="restaurant container">
+      <section id="restaurant-cards" class="restaurant container">
         <h2>Restaurants</h2>
         <div class="all-cards-restaurant">
           <div class="card-restaurant">
@@ -162,22 +170,25 @@
     </main>
 
     <footer class="footer">
-      <h4>ohmyfood</h4>
-      <ul>
-        <li>
-          <a href="#"
-            ><i class="fa-solid fa-utensils fa-xs"></i>Proposer un restaurant</a
-          >
-        </li>
-        <li>
-          <a href="#"
-            ><i class="fa-solid fa-handshake-angle fa-xs"></i>Devenir
-            partenaire</a
-          >
-        </li>
-        <li><a href="#">Mentions légales</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+      <div class="footer-wrapper container">
+        <h4>ohmyfood</h4>
+        <ul>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-utensils fa-xs"></i>Proposer un
+              restaurant</a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-handshake-angle fa-xs"></i>Devenir
+              partenaire</a
+            >
+          </li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="mailto:ermane.pourmohtasham@epfedu.fr">Contact</a></li>
+        </ul>
+      </div>
     </footer>
   </body>
 </html>
