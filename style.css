@@ -13,33 +13,80 @@ body {
   line-height: 1.2;
   margin: 0;
   position: relative;
-  z-index: 10;
 }
 
 .container {
   max-width: 1000px;
 }
 
+.small-container {
+  max-width: 700px;
+}
+
 /* ----------SASS extended properties-------*/
-.spinner-body, .footer, .operation-items, header {
+.spinner-body, .order, .footer, .operation-items, header {
   display: flex;
   justify-content: center;
 }
 
-.restaurant, .operation, .information-wrapper, header {
+.menu, .photo, .restaurant, .operation, .information-wrapper, header {
   margin-right: auto;
   margin-left: auto;
+}
+
+/* ----------common properties-------*/
+.empty-heart {
+  color: black;
+  transition: color 0.4s linear;
+}
+.empty-heart:hover {
+  color: transparent;
+}
+
+.full-heart {
+  color: transparent;
+  transition: color 0.4s linear;
+}
+.full-heart:hover {
+  color: #9356dc;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(170deg, #ff79da, #9356dc);
+  padding: 1em 1.5em;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.btn:hover {
+  background: linear-gradient(170deg, rgba(255, 121, 218, 0.85), rgba(147, 86, 220, 0.85));
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 7px 17px;
 }
 
 /* ----------Header-------*/
 header {
   padding: 1em 2em;
+  position: relative;
 }
 header img {
   max-width: 200px;
 }
 
-/* ---------- Localisation ---------- */
+/* Restaurants header*/
+.header-restaurants a {
+  text-decoration: none;
+  color: initial;
+}
+.header-restaurants i {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+}
+
+/* ---------- Localisation (homepage)---------- */
 .localisation-and-presentation {
   max-width: 100%;
 }
@@ -79,7 +126,7 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #f2f2f2 inset !important;
 }
 
-/* ---------- Information ---------- */
+/* ---------- Information (homepage)---------- */
 .info {
   text-align: center;
   padding: 60px 40px;
@@ -94,22 +141,8 @@ input:-webkit-autofill:active {
 .info p {
   margin-bottom: 30px;
 }
-.info a {
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(170deg, #ff79da, #9356dc);
-  padding: 1em 1.5em;
-  border-radius: 50px;
-  letter-spacing: 0.5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.info a:hover {
-  background: linear-gradient(170deg, rgba(255, 121, 218, 0.85), rgba(147, 86, 220, 0.85));
-  box-shadow: rgba(0, 0, 0, 0.55) 0px 7px 17px;
-}
 
-/* ---------- Operation ---------- */
+/* ---------- Operation (homepage) ---------- */
 .operation-wrapper {
   padding: 20px;
 }
@@ -151,7 +184,7 @@ input:-webkit-autofill:active {
   font-size: 0.75rem;
 }
 
-/* ---------- card restaurant ---------- */
+/* ---------- card restaurant (homepage) ---------- */
 .restaurant {
   padding: 20px;
   background-color: #fafafa;
@@ -221,22 +254,8 @@ input:-webkit-autofill:active {
   top: 35px;
   right: 25px;
 }
-.card-restaurant-body .heart .empty-heart {
-  color: black;
-  transition: color 1s linear;
-}
-.card-restaurant-body .heart .empty-heart:hover {
-  color: transparent;
-}
-.card-restaurant-body .heart .full-heart {
-  color: transparent;
-  transition: color 1s linear;
-}
-.card-restaurant-body .heart .full-heart:hover {
-  color: #9356dc;
-}
 
-/* ---------- footer ---------- */
+/* ---------- footer---------- */
 .footer-wrapper {
   width: 100%;
   padding: 20px;
@@ -266,6 +285,146 @@ input:-webkit-autofill:active {
 }
 .footer-wrapper a .fa-utensils {
   margin-right: 13px;
+}
+
+/* ---------- Restaurants page photo section ---------- */
+.photo {
+  height: 290px;
+  background-image: url("../images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ---------- Restaurants page menu section ---------- */
+.menu {
+  padding: 20px;
+  background-color: #fafafa;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin-top: -50px;
+}
+
+.menu-title {
+  position: relative;
+}
+.menu-title h2 {
+  font-family: Shrikhand, sans-serif;
+  letter-spacing: 0.25px;
+  font-size: 28px;
+  font-weight: 400;
+}
+.menu-title .heart {
+  cursor: pointer;
+}
+.menu-title .heart i {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.menu-description {
+  margin-bottom: 50px;
+}
+.menu-description .dish-title-underline {
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+  align-self: flex-start;
+  margin-bottom: 30px;
+}
+.menu-description .dish-title-underline::before {
+  content: " ";
+  background: #99e2d0;
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  top: 22px;
+}
+
+.menu-dish-card {
+  opacity: 0;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+.menu-dish-card:hover .menu-dish-card-body {
+  width: 80%;
+}
+.menu-dish-card:hover .menu-dish-checked-icon {
+  right: 0;
+}
+.menu-dish-card:hover .menu-dish-checked-icon i {
+  animation: icon-rotate 0.4s ease-in-out 0s;
+}
+
+.menu-dish-card-body {
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  transition: width 0.3s linear 0s;
+}
+.menu-dish-card-body h3 {
+  margin: 0;
+}
+.menu-dish-card-body p {
+  margin: 0;
+}
+.menu-dish-card-body .dish-description {
+  padding-top: 5px;
+  font-size: 15px;
+}
+.menu-dish-card-body .price {
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+
+.menu-dish-checked-icon {
+  background-color: #99e2d0;
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: -30%;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s linear 0s;
+}
+.menu-dish-checked-icon i {
+  color: #fff;
+}
+
+.order .btn {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 70px;
+}
+
+/* dishes card animations*/
+.appetizer .menu-dish-card {
+  animation: appear 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.main-course .menu-dish-card {
+  animation: appear 1s ease-out 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.dessert .menu-dish-card {
+  animation: appear 1s ease-out 1s;
+  animation-fill-mode: forwards;
 }
 
 /* ---------- Media queries ---------- */
@@ -360,6 +519,21 @@ input:-webkit-autofill:active {
     border-width: 1px;
     opacity: 0;
     z-index: -10;
+  }
+}
+@keyframes icon-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 

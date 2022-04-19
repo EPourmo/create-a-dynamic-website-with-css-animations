@@ -23,11 +23,14 @@ body {
   line-height: 1.2;
   margin: 0;
   position: relative;
-  z-index: 10;
 }
 
 .container {
   max-width: 1000px;
+}
+
+.small-container {
+  max-width: 700px;
 }
 
 /* ----------SASS extended properties-------*/
@@ -40,19 +43,73 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+
+/* ----------common properties-------*/
+.empty-heart {
+  color: black;
+  transition: color 0.4s linear;
+  &:hover {
+    color: transparent;
+  }
+}
+
+.full-heart {
+  color: transparent;
+  transition: color 0.4s linear;
+  &:hover {
+    color: $primary;
+    // background-color: linear-gradient(170deg, $secondary, $primary);
+  }
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(170deg, $secondary, $primary);
+  padding: 1em 1.5em;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &:hover {
+    background: linear-gradient(
+      170deg,
+      rgba($secondary, 85%),
+      rgba($primary, 85%)
+    );
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 7px 17px;
+  }
+}
+
 /* ----------Header-------*/
 
 header {
   @extend %margin-center;
   @extend %flex-center;
   padding: 1em 2em;
+  position: relative;
 
   img {
     max-width: 200px;
   }
 }
 
-/* ---------- Localisation ---------- */
+/* Restaurants header*/
+.header-restaurants {
+  a {
+    text-decoration: none;
+    color: initial;
+  }
+
+  i {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+  }
+}
+
+/* ---------- Localisation (homepage)---------- */
 
 .information-wrapper {
   @extend %margin-center;
@@ -98,7 +155,7 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px $grey-color inset !important;
 }
 
-/* ---------- Information ---------- */
+/* ---------- Information (homepage)---------- */
 
 .info {
   text-align: center;
@@ -115,30 +172,9 @@ input:-webkit-autofill:active {
   p {
     margin-bottom: 30px;
   }
-
-  a {
-    display: inline-block;
-    text-decoration: none;
-    // z-index: 1000;
-    color: #fff;
-    background: linear-gradient(170deg, $secondary, $primary);
-    padding: 1em 1.5em;
-    border-radius: 50px;
-    letter-spacing: 0.5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-    &:hover {
-      background: linear-gradient(
-        170deg,
-        rgba($secondary, 85%),
-        rgba($primary, 85%)
-      );
-      box-shadow: rgba(0, 0, 0, 0.55) 0px 7px 17px;
-    }
-  }
 }
 
-/* ---------- Operation ---------- */
+/* ---------- Operation (homepage) ---------- */
 .operation {
   @extend %margin-center;
 }
@@ -189,7 +225,7 @@ input:-webkit-autofill:active {
   }
 }
 
-/* ---------- card restaurant ---------- */
+/* ---------- card restaurant (homepage) ---------- */
 .restaurant {
   padding: 20px;
   @extend %margin-center;
@@ -267,29 +303,10 @@ input:-webkit-autofill:active {
       top: 35px;
       right: 25px;
     }
-
-    .empty-heart {
-      color: black;
-      transition: color 1s linear;
-    }
-
-    .empty-heart:hover {
-      color: transparent;
-    }
-
-    .full-heart {
-      color: transparent;
-      transition: color 1s linear;
-    }
-
-    .full-heart:hover {
-      color: $primary;
-      // background-color: linear-gradient(170deg, $secondary, $primary);
-    }
   }
 }
 
-/* ---------- footer ---------- */
+/* ---------- footer---------- */
 
 .footer {
   @extend %flex-center;
@@ -328,6 +345,170 @@ input:-webkit-autofill:active {
     .fa-utensils {
       margin-right: 13px;
     }
+  }
+}
+
+/* ---------- Restaurants page photo section ---------- */
+
+.photo {
+  height: 290px;
+  @extend %margin-center;
+  background-image: url("../images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ---------- Restaurants page menu section ---------- */
+.menu {
+  @extend %margin-center;
+  padding: 20px;
+  background-color: $light-grey-color;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin-top: -50px;
+}
+
+.menu-title {
+  position: relative;
+
+  h2 {
+    font-family: Shrikhand, sans-serif;
+    letter-spacing: 0.25px;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .heart {
+    cursor: pointer;
+    i {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+  }
+}
+
+.menu-description {
+  margin-bottom: 50px;
+
+  .dish-title-underline {
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    align-self: flex-start;
+    margin-bottom: 30px;
+
+    &::before {
+      content: " ";
+      background: $tertiary;
+      position: absolute;
+      width: 40px;
+      height: 3px;
+      top: 22px;
+    }
+  }
+}
+
+.menu-dish-card {
+  opacity: 0;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+  &:hover {
+    .menu-dish-card-body {
+      width: 80%;
+    }
+
+    .menu-dish-checked-icon {
+      right: 0;
+      i {
+        animation: icon-rotate 0.4s ease-in-out 0s;
+      }
+    }
+  }
+}
+
+.menu-dish-card-body {
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  transition: width 0.3s linear 0s;
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .dish-description {
+    padding-top: 5px;
+    font-size: 15px;
+  }
+
+  .price {
+    position: absolute;
+    right: 20px;
+    top: 35px;
+  }
+}
+
+.menu-dish-checked-icon {
+  background-color: $tertiary;
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: -30%;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s linear 0s;
+  i {
+    color: #fff;
+  }
+}
+
+.order {
+  @extend %flex-center;
+  .btn {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+  }
+}
+
+/* dishes card animations*/
+.appetizer {
+  .menu-dish-card {
+    animation: appear 1s ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+.main-course {
+  .menu-dish-card {
+    animation: appear 1s ease-out 0.5s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.dessert {
+  .menu-dish-card {
+    animation: appear 1s ease-out 1s;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -436,5 +617,23 @@ input:-webkit-autofill:active {
     border-width: 1px;
     opacity: 0;
     z-index: -10;
+  }
+}
+
+@keyframes icon-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
