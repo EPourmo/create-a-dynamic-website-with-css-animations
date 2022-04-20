@@ -187,6 +187,7 @@ input:-webkit-autofill:active {
 /* ---------- card restaurant (homepage) ---------- */
 .restaurant {
   padding: 20px;
+  padding-bottom: 60px;
   background-color: #fafafa;
 }
 
@@ -194,6 +195,7 @@ input:-webkit-autofill:active {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 .card-restaurant {
@@ -202,7 +204,6 @@ input:-webkit-autofill:active {
   overflow: hidden;
   border-radius: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  margin-bottom: 20px;
 }
 .card-restaurant a {
   text-decoration: none;
@@ -290,10 +291,22 @@ input:-webkit-autofill:active {
 /* ---------- Restaurants page photo section ---------- */
 .photo {
   height: 290px;
-  background-image: url("../images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #a6a6a6;
+}
+.photo.palette-du-gout {
+  background-image: url("images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+}
+.photo.note-enchantee {
+  background-image: url("images/stil-u2Lp8tXIcjw-unsplash.jpg");
+}
+.photo.a-la-francaise {
+  background-image: url("images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+.photo.delice-des-sens {
+  background-image: url("images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
 }
 
 /* ---------- Restaurants page menu section ---------- */
@@ -363,28 +376,37 @@ input:-webkit-autofill:active {
   right: 0;
 }
 .menu-dish-card:hover .menu-dish-checked-icon i {
-  animation: icon-rotate 0.4s ease-in-out 0s;
+  animation: icon-rotate 0.5s ease-in-out 0s;
 }
 
 .menu-dish-card-body {
   padding: 10px;
   position: relative;
   width: 100%;
-  transition: width 0.3s linear 0s;
+  transition: width 0.4s linear 0s;
 }
 .menu-dish-card-body h3 {
+  font-size: 17px;
   margin: 0;
+  width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-dish-card-body p {
   margin: 0;
 }
 .menu-dish-card-body .dish-description {
   padding-top: 5px;
-  font-size: 15px;
+  font-size: 14px;
+  width: 83%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-dish-card-body .price {
   position: absolute;
-  right: 20px;
+  right: 15px;
   top: 35px;
 }
 
@@ -398,7 +420,7 @@ input:-webkit-autofill:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s linear 0s;
+  transition: all 0.4s linear 0s;
 }
 .menu-dish-checked-icon i {
   color: #fff;
