@@ -47,18 +47,22 @@ body {
 /* ----------common properties-------*/
 .empty-heart {
   color: black;
-  transition: color 0.4s linear;
+  transition: all 0.4s ease-out;
+  opacity: 1;
   &:hover {
-    color: transparent;
+    opacity: 0;
   }
 }
 
 .full-heart {
-  color: transparent;
-  transition: color 0.4s linear;
+  opacity: 0;
+  transition: all 0.4s ease-out;
   &:hover {
-    color: $primary;
-    // background-color: linear-gradient(170deg, $secondary, $primary);
+    // color: $primary;
+    opacity: 1;
+    background: -webkit-linear-gradient(170deg, $secondary, $primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -567,6 +571,7 @@ input:-webkit-autofill:active {
   height: 100vh;
   @extend %flex-center;
   align-items: center;
+
   z-index: -10;
 }
 
@@ -584,12 +589,14 @@ input:-webkit-autofill:active {
     border-top-color: $primary;
     border-radius: 50%;
     animation: spinnerOne 1.5s linear 1;
+    animation-fill-mode: forwards;
   }
 
   div:nth-child(2) {
     border: 10px solid transparent;
     border-bottom-color: $primary;
     animation: spinnerTwo 1.5s linear 1;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -598,20 +605,20 @@ input:-webkit-autofill:active {
     transform: rotate(0deg);
     border-width: 10px;
     opacity: 1;
-    z-index: 100;
+    z-index: 10;
   }
   50% {
     transform: rotate(180deg);
     border-width: 1px;
     opacity: 1;
-    z-index: 100;
+    z-index: 10;
   }
 
   75% {
     transform: rotate(270deg);
     border-width: 5px;
     opacity: 1;
-    z-index: 100;
+    z-index: 10;
   }
 
   100% {
