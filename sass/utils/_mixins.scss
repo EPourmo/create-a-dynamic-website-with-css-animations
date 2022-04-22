@@ -1,0 +1,13 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin margin-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin box-shadow {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

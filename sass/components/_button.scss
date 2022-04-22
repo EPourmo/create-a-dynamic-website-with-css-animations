@@ -1,0 +1,19 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(170deg, $secondary, $primary);
+  padding: 16px 24px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &:hover {
+    background: linear-gradient(
+      170deg,
+      rgba($secondary, 85%),
+      rgba($primary, 85%)
+    );
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 7px 17px;
+  }
+}

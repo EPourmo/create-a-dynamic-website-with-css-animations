@@ -1,0 +1,197 @@
+/* ---------- Localisation (homepage)---------- */
+
+.information-wrapper {
+  @include margin-center;
+}
+
+.localisation-and-presentation {
+  max-width: 100%;
+}
+
+.localisation {
+  max-width: 100%;
+  @include flex-center;
+  align-items: baseline;
+  padding: 8px;
+  background-color: $grey-color;
+  box-shadow: inset 0px 11px 8px -10px #ccc;
+
+  i {
+    margin-right: 4px;
+  }
+}
+
+form input {
+  padding: 8px 16px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #fff;
+  background-color: inherit;
+  max-width: 200px;
+  &::placeholder {
+    font-weight: 400;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px $grey-color inset !important;
+  -webkit-box-shadow: 0 0 0 30px $grey-color inset !important;
+}
+
+/* ---------- Information (homepage)---------- */
+
+.info {
+  text-align: center;
+  padding: 60px 40px;
+  background-color: $light-grey-color;
+
+  h2 {
+    font-size: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+}
+
+/* ---------- Operation (homepage) ---------- */
+.operation {
+  @include margin-center;
+}
+
+.operation-wrapper {
+  padding: 20px;
+}
+
+.operation-items {
+  @include flex-center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.operation-item {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 5px 30px;
+  background-color: $light-grey-color;
+  border-radius: 20px;
+  @include box-shadow;
+  margin-bottom: 24px;
+
+  i {
+    color: $darker-grey-color;
+    margin-right: 30px;
+  }
+
+  .icon-purple-color {
+    color: $primary;
+  }
+
+  &.background-purple-color {
+    background-color: $light-purple-color;
+  }
+
+  p {
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    background-color: $primary;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+  }
+}
+
+/* ---------- card restaurant (homepage) ---------- */
+.restaurant {
+  padding: 20px;
+  padding-bottom: 60px;
+  @include margin-center;
+  background-color: $light-grey-color;
+}
+
+.all-cards-restaurant {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card-restaurant {
+  max-width: 330px;
+  max-height: 250px;
+  overflow: hidden;
+  border-radius: 20px;
+  @include box-shadow;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.card-restaurant-img {
+  height: 70%;
+  overflow: hidden;
+  position: relative;
+
+  p {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: $tertiary;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: $darker-green-color;
+    border-radius: 2px;
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 232px;
+    object-fit: cover;
+    object-position: center -50px;
+  }
+
+  .note-enchantee {
+    object-position: center -145px;
+  }
+}
+
+.card-restaurant-body {
+  height: 30%;
+  padding: 10px;
+  position: relative;
+
+  h4 {
+    margin: 5px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .heart {
+    i {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 25px;
+    }
+  }
+}

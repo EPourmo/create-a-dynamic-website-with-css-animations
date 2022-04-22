@@ -23,44 +23,12 @@ body {
   max-width: 700px;
 }
 
-/* ----------SASS extended properties-------*/
-.spinner-body, .order, .footer, .operation-items, header {
-  display: flex;
-  justify-content: center;
-}
-
-.menu, .photo, .restaurant, .operation, .information-wrapper, header {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* ----------common properties-------*/
-.empty-heart {
-  color: black;
-  transition: all 0.4s ease-out;
-  opacity: 1;
-}
-.empty-heart:hover {
-  opacity: 0;
-}
-
-.full-heart {
-  opacity: 0;
-  transition: all 0.4s ease-out;
-}
-.full-heart:hover {
-  opacity: 1;
-  background: -webkit-linear-gradient(170deg, #ff79da, #9356dc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .btn {
   display: inline-block;
   text-decoration: none;
   color: #fff;
   background: linear-gradient(170deg, #ff79da, #9356dc);
-  padding: 1em 1.5em;
+  padding: 16px 24px;
   border-radius: 50px;
   letter-spacing: 0.5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -70,27 +38,186 @@ body {
   box-shadow: rgba(0, 0, 0, 0.55) 0px 7px 17px;
 }
 
+.empty-heart {
+  color: black;
+  transition: all 0.5s linear;
+  opacity: 1;
+}
+.empty-heart:hover {
+  opacity: 0;
+}
+
+.full-heart {
+  opacity: 0;
+  transition: all 0.5s linear;
+  background: -webkit-linear-gradient(90deg, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.full-heart:hover {
+  opacity: 1;
+}
+
+/* spinner design */
+.spinner-body {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spinnerBody 1.5s linear 1;
+  animation-fill-mode: forwards;
+}
+
+.spinner {
+  width: 350px;
+  height: 350px;
+  position: relative;
+}
+.spinner div {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  border: 10px solid transparent;
+  border-top-color: #9356dc;
+  border-radius: 50%;
+  animation: spinnerOne 1.5s linear 1;
+}
+.spinner div:nth-child(2) {
+  border-bottom-color: #9356dc;
+  animation: spinnerTwo 1.5s linear 1;
+}
+
+@keyframes spinnerBody {
+  0% {
+    z-index: 10;
+  }
+  50% {
+    z-index: 10;
+  }
+  75% {
+    z-index: 10;
+  }
+  100% {
+    z-index: -10;
+  }
+}
+@keyframes spinnerOne {
+  0% {
+    transform: rotate(0deg);
+    border-width: 10px;
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-width: 1px;
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(270deg);
+    border-width: 5px;
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-width: 10px;
+    opacity: 0;
+  }
+}
+@keyframes spinnerTwo {
+  0% {
+    transform: rotate(0deg);
+    border-width: 1px;
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-width: 10px;
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(270deg);
+    border-width: 5px;
+    opacity: 1;
+    z-index: 10;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-width: 1px;
+    opacity: 0;
+    z-index: -10;
+  }
+}
 /* ----------Header-------*/
 header {
-  padding: 1em 2em;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  padding: 16px 32px;
   position: relative;
 }
 header img {
   max-width: 200px;
 }
 
-/* Restaurants header*/
-.header-restaurants a {
-  text-decoration: none;
-  color: initial;
-}
-.header-restaurants i {
-  position: absolute;
-  top: 35px;
-  left: 20px;
+/* ---------- footer---------- */
+.footer {
+  display: flex;
+  justify-content: center;
 }
 
+.footer-wrapper {
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  background-color: #3d3d3d;
+}
+.footer-wrapper h4 {
+  margin-top: 0;
+  font-family: Shrikhand, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+.footer-wrapper ul {
+  padding-left: 0;
+}
+.footer-wrapper li {
+  list-style: none;
+  line-height: 1.6;
+}
+.footer-wrapper a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer-wrapper a i {
+  margin-right: 10px;
+}
+.footer-wrapper a .fa-utensils {
+  margin-right: 13px;
+}
+
+/* ---------- Media queries ---------- */
+@media (min-width: 500px) {
+  .footer-wrapper ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer-wrapper li {
+    margin-right: 10px;
+  }
+}
 /* ---------- Localisation (homepage)---------- */
+.information-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .localisation-and-presentation {
   max-width: 100%;
 }
@@ -98,21 +225,21 @@ header img {
 .localisation {
   max-width: 100%;
   display: flex;
-  align-items: baseline;
   justify-content: center;
-  padding: 0.5em;
+  align-items: baseline;
+  padding: 8px;
   background-color: #f2f2f2;
   box-shadow: inset 0px 11px 8px -10px #ccc;
 }
 .localisation i {
-  margin-right: 0.25em;
+  margin-right: 4px;
 }
 
 form input {
-  padding: 0.5em 1em;
+  padding: 8px 16px;
   border: none;
   outline: none;
-  font-size: 1.05rem;
+  font-size: 16px;
   font-weight: 700;
   background-color: #fff;
   background-color: inherit;
@@ -137,9 +264,9 @@ input:-webkit-autofill:active {
   background-color: #fafafa;
 }
 .info h2 {
-  font-size: 1.5rem;
-  padding-left: 1em;
-  padding-right: 1em;
+  font-size: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-top: 0;
 }
 .info p {
@@ -147,11 +274,18 @@ input:-webkit-autofill:active {
 }
 
 /* ---------- Operation (homepage) ---------- */
+.operation {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .operation-wrapper {
   padding: 20px;
 }
 
 .operation-items {
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -165,7 +299,7 @@ input:-webkit-autofill:active {
   background-color: #fafafa;
   border-radius: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  margin-bottom: 1.5em;
+  margin-bottom: 24px;
 }
 .operation-item i {
   color: #a6a6a6;
@@ -185,13 +319,15 @@ input:-webkit-autofill:active {
   color: #fff;
   padding: 5px 8px;
   border-radius: 50%;
-  font-size: 0.75rem;
+  font-size: 12px;
 }
 
 /* ---------- card restaurant (homepage) ---------- */
 .restaurant {
   padding: 20px;
   padding-bottom: 60px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: #fafafa;
 }
 
@@ -225,7 +361,7 @@ input:-webkit-autofill:active {
   right: 15px;
   background-color: #99e2d0;
   padding: 6px 10px;
-  font-size: 0.75rem;
+  font-size: 12px;
   color: #2c9c81;
   border-radius: 2px;
   font-weight: 700;
@@ -256,52 +392,34 @@ input:-webkit-autofill:active {
 }
 .card-restaurant-body .heart i {
   position: absolute;
-  top: 35px;
+  top: 25px;
   right: 25px;
+  font-size: 25px;
 }
 
-/* ---------- footer---------- */
-.footer-wrapper {
-  width: 100%;
-  padding: 20px;
-  color: #fff;
-  background-color: #3d3d3d;
-}
-.footer-wrapper h4 {
-  margin-top: 0;
-  font-family: Shrikhand, sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-}
-.footer-wrapper ul {
-  padding-left: 0;
-}
-.footer-wrapper li {
-  list-style: none;
-  line-height: 1.6;
-}
-.footer-wrapper a {
-  color: inherit;
+/* ---------- Restaurants header ---------- */
+.header-restaurants a {
   text-decoration: none;
-  font-size: 14px;
+  color: initial;
 }
-.footer-wrapper a i {
-  margin-right: 10px;
-}
-.footer-wrapper a .fa-utensils {
-  margin-right: 13px;
+.header-restaurants i {
+  position: absolute;
+  top: 35px;
+  left: 20px;
 }
 
-/* ---------- Restaurants page photo section ---------- */
+/* ------- Restaurants page photo section ------- */
 .photo {
   height: 290px;
+  margin-right: auto;
+  margin-left: auto;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #a6a6a6;
 }
 .photo.palette-du-gout {
-  background-image: url("images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-image: url("/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
 }
 .photo.note-enchantee {
   background-image: url("images/stil-u2Lp8tXIcjw-unsplash.jpg");
@@ -315,6 +433,8 @@ input:-webkit-autofill:active {
 
 /* ---------- Restaurants page menu section ---------- */
 .menu {
+  margin-right: auto;
+  margin-left: auto;
   padding: 20px;
   background-color: #fafafa;
   border-top-right-radius: 50px;
@@ -336,8 +456,9 @@ input:-webkit-autofill:active {
 }
 .menu-title .heart i {
   position: absolute;
-  top: 15px;
+  top: 0;
   right: 20px;
+  font-size: 28px;
 }
 
 .menu-description {
@@ -430,6 +551,10 @@ input:-webkit-autofill:active {
   color: #fff;
 }
 
+.order {
+  display: flex;
+  justify-content: center;
+}
 .order .btn {
   padding-left: 50px;
   padding-right: 50px;
@@ -453,102 +578,6 @@ input:-webkit-autofill:active {
   animation-fill-mode: forwards;
 }
 
-/* ---------- Media queries ---------- */
-@media (min-width: 500px) {
-  /* footer */
-  .footer-wrapper ul {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  .footer-wrapper li {
-    margin-right: 10px;
-  }
-}
-/* spinner design */
-.spinner-body {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  align-items: center;
-  z-index: -10;
-}
-
-.spinner {
-  width: 350px;
-  height: 350px;
-  position: relative;
-}
-.spinner div {
-  position: absolute;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  border: 10px solid transparent;
-  border-top-color: #9356dc;
-  border-radius: 50%;
-  animation: spinnerOne 1.5s linear 1;
-  animation-fill-mode: forwards;
-}
-.spinner div:nth-child(2) {
-  border: 10px solid transparent;
-  border-bottom-color: #9356dc;
-  animation: spinnerTwo 1.5s linear 1;
-  animation-fill-mode: forwards;
-}
-
-@keyframes spinnerOne {
-  0% {
-    transform: rotate(0deg);
-    border-width: 10px;
-    opacity: 1;
-    z-index: 10;
-  }
-  50% {
-    transform: rotate(180deg);
-    border-width: 1px;
-    opacity: 1;
-    z-index: 10;
-  }
-  75% {
-    transform: rotate(270deg);
-    border-width: 5px;
-    opacity: 1;
-    z-index: 10;
-  }
-  100% {
-    transform: rotate(360deg);
-    border-width: 10px;
-    opacity: 0;
-    z-index: -10;
-  }
-}
-@keyframes spinnerTwo {
-  0% {
-    transform: rotate(0deg);
-    border-width: 1px;
-    opacity: 1;
-    z-index: 10;
-  }
-  50% {
-    transform: rotate(180deg);
-    border-width: 10px;
-    opacity: 1;
-    z-index: 10;
-  }
-  75% {
-    transform: rotate(270deg);
-    border-width: 5px;
-    opacity: 1;
-    z-index: 10;
-  }
-  100% {
-    transform: rotate(360deg);
-    border-width: 1px;
-    opacity: 0;
-    z-index: -10;
-  }
-}
 @keyframes icon-rotate {
   100% {
     transform: rotate(360deg);

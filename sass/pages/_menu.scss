@@ -1,0 +1,221 @@
+/* ---------- Restaurants header ---------- */
+.header-restaurants {
+  a {
+    text-decoration: none;
+    color: initial;
+  }
+
+  i {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+  }
+}
+
+/* ------- Restaurants page photo section ------- */
+
+.photo {
+  height: 290px;
+  @include margin-center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $darker-grey-color;
+
+  &.palette-du-gout {
+    background-image: url("/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  }
+
+  &.note-enchantee {
+    background-image: url("images/stil-u2Lp8tXIcjw-unsplash.jpg");
+  }
+
+  &.a-la-francaise {
+    background-image: url("images/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  }
+
+  &.delice-des-sens {
+    background-image: url("images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+  }
+}
+
+/* ---------- Restaurants page menu section ---------- */
+.menu {
+  @include margin-center;
+  padding: 20px;
+  background-color: $light-grey-color;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin-top: -50px;
+}
+
+.menu-title {
+  position: relative;
+
+  h2 {
+    font-family: Shrikhand, sans-serif;
+    letter-spacing: 0.25px;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .heart {
+    cursor: pointer;
+    i {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      font-size: 28px;
+    }
+  }
+}
+
+.menu-description {
+  margin-bottom: 50px;
+
+  .dish-title-underline {
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    align-self: flex-start;
+    margin-bottom: 30px;
+
+    &::before {
+      content: " ";
+      background: $tertiary;
+      position: absolute;
+      width: 40px;
+      height: 3px;
+      top: 22px;
+    }
+  }
+}
+
+.menu-dish-card {
+  opacity: 0;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #fff;
+  @include box-shadow;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+  &:hover {
+    .menu-dish-card-body {
+      width: 80%;
+    }
+
+    .menu-dish-checked-icon {
+      right: 0;
+      i {
+        animation: icon-rotate 0.5s ease-in-out 0s;
+      }
+    }
+  }
+}
+
+.menu-dish-card-body {
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  transition: width 0.4s linear 0s;
+
+  h3 {
+    font-size: 17px;
+    margin: 0;
+    width: 85%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .dish-description {
+    padding-top: 5px;
+    font-size: 14px;
+    width: 83%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .price {
+    position: absolute;
+    right: 15px;
+    top: 35px;
+  }
+}
+
+.menu-dish-checked-icon {
+  background-color: $tertiary;
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: -30%;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s linear 0s;
+  i {
+    color: #fff;
+  }
+}
+
+.order {
+  @include flex-center;
+  .btn {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+  }
+}
+
+/* dishes card animations*/
+.appetizer {
+  .menu-dish-card {
+    animation: appear 1s ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+.main-course {
+  .menu-dish-card {
+    animation: appear 1s ease-out 0.5s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.dessert {
+  .menu-dish-card {
+    animation: appear 1s ease-out 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes icon-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

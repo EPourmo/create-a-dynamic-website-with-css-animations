@@ -1,0 +1,20 @@
+.empty-heart {
+  color: black;
+  transition: all 0.5s linear;
+  opacity: 1;
+  &:hover {
+    opacity: 0;
+  }
+}
+
+.full-heart {
+  opacity: 0;
+  transition: all 0.5s linear;
+  background: -webkit-linear-gradient(90deg, $secondary, $primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  &:hover {
+    opacity: 1;
+  }
+}
