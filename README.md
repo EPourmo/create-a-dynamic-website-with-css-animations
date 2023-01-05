@@ -22,7 +22,7 @@ This site is responsive but it's focused on mobile first.
 
 
 ## Badges
-![GitHub last commit](https://img.shields.io/github/last-commit/EPourmo/create-a-dynamic-website-with-css-animations.git?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/EPourmo/create-a-dynamic-website-with-css-animations?style=plastic)
 ![W3C Validation](https://img.shields.io/w3c-validation/html?style=plastic&targetUrl=https%3A%2F%2Fohmyfood-site-ep.netlify.app%2F)
 
 
