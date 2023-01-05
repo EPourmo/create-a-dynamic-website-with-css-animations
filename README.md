@@ -1,24 +1,24 @@
-![16557256333819_FR_1155_P3_Banner-Booki](https://user-images.githubusercontent.com/94918200/210798883-a2d24475-5cd4-40d1-b3ea-341c05cb4269.png)
+![15982605908418_Maquettes Ohmyfood](https://user-images.githubusercontent.com/94918200/210818246-51d39f94-77e6-4c4c-99c4-c741d9c03e98.jpg)
 
 # Create a dynamic website with CSS animation
-
 
 # Project description
 
 This project is part of OpenClassrooms "Développeur d'application - JavaScript React" training.
 
-The goal of this project is to reproduce a site in only HTML and CSS (static website).
+The goal of this project is to create a dynamic website using CSS animations.
 
-This site is responsive.
+This site is responsive but it's focused on mobile first.
 
 
 ## 🔗 Online Deployment 
 
-[![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)](https://booki-site-ep.netlify.app/)
+[![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)](https://ohmyfood-site-ep.netlify.app/)
 
 ## 🛠 Tech Stack
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
 
 ## Badges
@@ -31,13 +31,13 @@ This site is responsive.
 Clone the project
 
 ```bash
-  git clone https://github.com/EPourmo/turn-an-interface-model-into-a-website-with-html-css.git
+  git clone https://github.com/EPourmo/create-a-dynamic-website-with-css-animations.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd turn-an-interface-model-into-a-website-with-html-css
+  cd create-a-dynamic-website-with-css-animations
 ```
 
 Start the server (Live Server extension is recommanded)
@@ -45,5 +45,5 @@ Start the server (Live Server extension is recommanded)
 
 ## Features
 
-- Responsive design
-- Flexbox
+- Responsive design (mobile first)
+- Sass
